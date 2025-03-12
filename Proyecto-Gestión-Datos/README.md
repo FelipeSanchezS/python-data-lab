@@ -1,23 +1,38 @@
-Librerías necesarias para su ejecución: 
+# Proyecto de Tratamiento de Datos con Python y Visualización
 
-    - Pandas: Se una con la finalidad de tratar los conjuntos de datos, en este caso, la base de datos.
+Este proyecto se centra en el tratamiento de un archivo `.xlsx` utilizando Python, con el objetivo de crear una base de datos y visualizar los datos procesados. El proyecto está dividido en varias fases, las cuales cubren todo el proceso desde la extracción de datos hasta la visualización de los resultados. Además, cada fase posee un README.md independiente para que pueda ser entendido de una mejor forma. Las fases son las siguientes:
 
-    - mysql_connector: Se usa como conector entre el script de python y la base de datos creada, para esta ocasión sera MySQL
+## Estructura del Proyecto
 
-    - re: Tiene la finalidad de trabajar el tema de expresiones regulares
+El proyecto está dividido en las siguientes carpetas y fases:
 
-Pasos para ejecutar el Script: 
+1. **ETL (Extract, Transform, Load)**  
+   En esta fase, se realizan las tareas de **extracción**, **transformación** y **carga** de los datos provenientes del archivo `.xlsx` a una base de datos. Se emplean bibliotecas de Python como `pandas` y `openpyxl` para manipular y limpiar los datos antes de ser insertados en la base de datos.
 
-    Para realizar esto se requiere unicamente contar con la ruta del archivo excel actualizada, tener la base de datos creada y conectada de forma correcta en cuando a usuario, servidor y contraseña, que la estructura coincida con la establecida en el script y las librerías requeridas instaladas. Una vez hecho esto basta con ejecutar el Script y este ira mostrando en pantalla mensajes de la limpieza de datos y la inserción de registros en cada tabla. Una vez finalizado enviará un mensaje diciendo que todos los datos fueron insertados de forma correcta
+2. **SQL**  
+   Esta fase contiene el esquema de la base de datos, así como el **dump** de la base de datos, que incluye los registros procesados. El esquema de la base de datos es entregado mediante archivos SQL, y el dump proporciona un respaldo con los datos ya cargados.
 
-Explicación transformaciones aplicadas:
+3. **Dashboard**  
+   En esta fase se crea un **dashboard interactivo** utilizando bibliotecas como `matplotlib`, `seaborn` o `plotly` para visualizar gráficas que permitan analizar los datos de forma clara y eficaz. El archivo ejecutable `.py` genera las visualizaciones a partir de los datos procesados.
 
-        En este ejercicio directamente dentro del Script del ETL, dentro del Transform se realizan trasformaciones específicamente a las columnas de nombre, categoría, correo y fecha.
+4. **Dataset**  
+   Esta fase contiene el archivo original `.xlsx` con los datos iniciales que fueron tratados en el proyecto.
 
-            - Nombre: Para este caso se transforma de tal manera que los datos Tengan en mayúscula la primera letra.
+## Requisitos
 
-             - Categoría: Para este caso al no crearse una tabla y relacionarla dado que según la cantidad de datos y la estructura no lo vi necesario, se procedió a establecer toda la palabra en mayúscula para que logre distinguir una de la otra
+Asegúrate de tener las siguientes dependencias instaladas:
 
-             - Correo: Para esta variable se impuso una validación de que el correo debe tener la siguiente: Contener antes y después del signo @ caracteres alfanuméricos y especiales, adicionalmente después de los caracteres que van posterior al @ debe ir un . continuando con caracteres alfanuméricos, dando asi cumplimiento a la estructura básica que tienen los correos electrónicos.
+- Python 3.x
+- Pandas
+- SQLAlchemy
+- Matplotlib / Seaborn / Plotly (dependiendo de la herramienta de visualización utilizada)
+- openpyxl
 
-             - Fecha: Para esta variable unicamente se estableció que el formato debía ser YYYY-MM-DD
+
+## Instalación
+
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repositorio.git
+   cd tu-repositorio
